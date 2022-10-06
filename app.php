@@ -10,6 +10,7 @@ use App\Animals\Elephant;
 use App\Animals\Parrot;
 use App\Animals\Fish;
 use App\Animals\Zebra;
+use App\Zoo;
 
 $animalsList = [
     Fish::class=>['Fisha','Fishb','Fishc','Fishd','Fishe'],
@@ -31,5 +32,7 @@ foreach ($animalsList as $type=>$nameList){
 }
 
 foreach ($animals as $animal){
-    echo "{$animal->getName()} says {$animal->noise()} \n";
+    Zoo::addAnimal($animal);
 }
+
+Zoo::visitTheZoo();
